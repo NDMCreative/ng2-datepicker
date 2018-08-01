@@ -11,7 +11,9 @@ import * as frLocale from 'date-fns/locale/fr';
 export class AppComponent {
   date: Date;
   options: DatepickerOptions = {
-    locale: enLocale
+    locale: enLocale,
+    minDate: new Date(new Date().setFullYear(new Date().getFullYear() - 1)), // Minimal selectable date
+    maxDate: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),  // Maximal selectable date
   };
   constructor() {
     this.date = new Date();
